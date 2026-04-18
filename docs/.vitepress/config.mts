@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from "vitepress-plugin-mermaid";
 
 const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid({
   title: "aron",
   description: "欢迎来到我的站点",
   base: isGithubActions ? '/Aron-Tech-a.github.io/' : '/',
