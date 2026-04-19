@@ -1,0 +1,44 @@
+{
+  "blog": {
+    "project_root": ".",
+    "docs_dir": "docs",
+    "default_port": 5173,
+    "template": {
+      "include_toc": true,
+      "include_tags": true,
+      "include_related": true
+    },
+    "git": {
+      "auto_commit": false,
+      "auto_push": false
+    }
+  },
+  "categories": [
+    {
+      "name": "ble",
+      "display_name": "BLE协议",
+      "description": "蓝牙低能耗相关文章"
+    },
+    {
+      "name": "tutorials",
+      "display_name": "教程",
+      "description": "编程教程和学习资源"
+    },
+    {
+      "name": "examples",
+      "display_name": "示例",
+      "description": "代码示例和演示"
+    }
+  ],
+  "templates": {
+    "default": {
+      "frontmatter": true,
+      "sections": [
+        "概述",
+        "主要内容",
+        "总结",
+        "参考资源"
+      ]
+    }
+  }
+}
