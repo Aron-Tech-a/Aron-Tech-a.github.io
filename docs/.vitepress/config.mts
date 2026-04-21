@@ -22,7 +22,8 @@ export default withMermaid({
         items: [
           { text: 'BLE Stack 工程深度分析', link: '/ble/ananlyzer.md' },
           { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'undefined reference to lwip_inet_ntop/lwip_inet_pton', link: '/ble/lwip_inet_ntop.md' }
         ]
       }
     ],
