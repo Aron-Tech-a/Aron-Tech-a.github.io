@@ -13,10 +13,17 @@ export default withMermaid({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' },
+      { text: '教程', link: '/tutorials/mineru-windows-install.md' },
       { text: 'BLE', link: '/ble/ananlyzer.md' }
     ],
 
     sidebar: [
+      {
+        text: '教程',
+        items: [
+          { text: 'Windows 上安装、运行与测试 MinerU', link: '/tutorials/mineru-windows-install.md' }
+        ]
+      },
       {
         text: 'Examples',
         items: [
