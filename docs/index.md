@@ -24,15 +24,15 @@ features:
   - title: BLE 深度分析
     details: 追踪协议栈行为，拆解关键数据结构和运行时链路，定位问题更快。
     link: /ble/ananlyzer
-    icon: 🔬
+    icon: "\U0001F52C"
   - title: 网络栈实战问题
     details: 记录真实编译与链接问题，给出可落地的排障路径和修复方案。
     link: /ble/lwip_inet_ntop
-    icon: 🛠
+    icon: "\U0001F6E0"
   - title: 可视化布局探索
     details: 使用 Cytoscape 相关方案展示布局、约束和交互，直观理解复杂关系。
     link: /api-examples
-    icon: 🧭
+    icon: "\U0001F9ED"
 
 ---
 
@@ -40,7 +40,18 @@ features:
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 
-const { theme } = useData()
+const { site, theme } = useData()
+
+const normalizePostLink = (link) => {
+  const normalizedLink = link.replace(/\.md(?=($|[?#]))/, '.html')
+
+  if (!normalizedLink.startsWith('/')) {
+    return normalizedLink
+  }
+
+  const base = site.value.base || '/'
+  return base === '/' ? normalizedLink : `${base.replace(/\/$/, '')}${normalizedLink}`
+}
 
 const posts = computed(() => {
   const groups = Array.isArray(theme.value.sidebar)
@@ -54,7 +65,7 @@ const posts = computed(() => {
 
   return items.map((item, index) => ({
     title: item.text,
-    url: item.link,
+    url: normalizePostLink(item.link),
     dateText: `TOP ${String(index + 1).padStart(2, '0')}`,
     summary: '来自导航配置的自动聚合入口，可在 config.mts 的 sidebar 中维护顺序。'
   }))
@@ -95,4 +106,3 @@ const posts = computed(() => {
     </li>
   </ol>
 </section>
-
